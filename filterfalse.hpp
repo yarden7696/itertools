@@ -52,19 +52,14 @@ namespace itertools{
                 return *this; // return the element that we found
             }
 
-//             iterator operator++(int){
-//                 iterator iter = *this;
-//                 ++(*this);
-//                 return iter;
-//             }
 
             value_type operator*(){
                 return *_begin;
             }
-        };
+        }; // End class iterator
 
         iterator begin(){ return iterator(_container.begin(), _container.end(), _s); } // field of the class accumulate
         iterator end(){ return iterator(_container.end(), _container.end(), _s); } // field of the class accumulate
-    };
+    }; //End class filterfalse
 }
 
