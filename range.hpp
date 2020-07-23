@@ -50,6 +50,7 @@ namespace itertools{
         };
 
         // iterators of class range, "begin" return the beginning of the range (num1) and "end" return the end of the range (num2)
+        // beging and end are fields of the class range 
         iterator begin() { return iterator(num1); } 
         iterator end() { return iterator(num2); }
         typedef int	value_type;
