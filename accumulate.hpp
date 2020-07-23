@@ -22,8 +22,8 @@ namespace itertools {
 
         class iterator{
             typename container::value_type _data;
-            typename container::iterator _iter;
-            typename container::iterator _end;
+            typename container::iterator _iter;//we take from the container the begin iterator(for example-id the container is range so _iter is num1) 
+            typename container::iterator _end;//we take from the container the end iterator(for example-id the container is range so _iter is num2)
             sign _sign;
 
         public:
