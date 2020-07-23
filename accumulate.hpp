@@ -2,20 +2,20 @@
 
 #pragma once
 
-namespace itertools{
-    typedef struct{
-        template <typename T>
-        T operator ()(T a, T b) const{
+namespace itertools {
+    
+    typedef struct {
+        template <typename T> T operator ()(T a, T b) const {
             return a+b;
         }
     } oper_plus;
 
-    template <typename container, typename sign = oper_plus>
-
-    class accumulate{
-        container _container;
-        sign _sign;
-        typedef typename container::value_type value_type;
+    
+    template <typename container, typename sign = oper_plus> class accumulate { // the default is oper_plus
+        
+        container _container; // the container that we get(could be range/ vector/ array...)
+        sign _sign; //  the default is "oper_plus", we can get any other sign
+        typedef typename container::value_type value_type; 
 
     public:
         explicit accumulate(container cont, sign s = oper_plus()) : _container(cont), _sign(s){}
