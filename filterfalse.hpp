@@ -28,13 +28,13 @@ namespace itertools{
                     ++_begin;
             }
 
-            iterator& operator=(const iterator& other){
+            iterator& operator=(const iterator& other) { // init this itarator with the values of "other itarator" and return *this 
                 if(this != &other) {
                     this->_begin = other._begin;
                     this->_end = other._end;
                     this->_s = other._s;
                 }
-                return *this; // init this itarator with the values of "other itarator" and return *this 
+                return *this;
             }
 
 
@@ -46,10 +46,10 @@ namespace itertools{
                 return _begin != other._begin;
             }
 
-            iterator& operator++() {
+            iterator& operator++() { // note: _begin points to the first element that return false to the condition
                 do { ++_begin; } 
-                while (_begin != _end && _s(*_begin));
-                return *this;
+                while (_begin != _end && _s(*_begin)); // running on the container until we get the next element that return false
+                return *this; // return the element that we found
             }
 
 //             iterator operator++(int){
@@ -63,8 +63,8 @@ namespace itertools{
             }
         };
 
-        iterator begin(){ return iterator(_container.begin(), _container.end(), _s); }
-        iterator end(){ return iterator(_container.end(), _container.end(), _s); }
+        iterator begin(){ return iterator(_container.begin(), _container.end(), _s); } // field of the class accumulate
+        iterator end(){ return iterator(_container.end(), _container.end(), _s); } // field of the class accumulate
     };
 }
 
