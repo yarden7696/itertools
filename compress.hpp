@@ -54,15 +54,10 @@ namespace itertools{
                 return *this; // return the element that we found
             }
 
-//             iterator operator++(int){
-//                 iterator iter = *this;
-//                 ++(*this);
-//                 return iter;
-//             }
-
             value_type operator*(){
                 return *_begin;
             }
+            
         }; // End class iterator
 
         iterator begin(){return iterator(_container1.begin(), _container1.end(), _container2.begin()); } // field of the class accumulate
